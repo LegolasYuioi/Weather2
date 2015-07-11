@@ -1,1 +1,324 @@
-Hello
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+		 
+		
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Просто погода</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href = "css/simple.css" rel = "stylesheet" type = "text/css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places&language=uk" type="text/javascript"></script>
+	<script type="text/javascript">
+											  function initialize() {
+
+					 var options = {
+					  types: ['(cities)'],
+					  componentRestrictions: {country: "ukr"}
+					 };
+
+					 var input = document.getElementById('searchTextField');
+					 var autocomplete = new google.maps.places.Autocomplete(input, options);
+					}
+					google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+		
+  </head>
+  <body>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+	
+	
+	<div class="container">
+		<div class="row">
+						
+						<div class="col col-md-12 col-lg-12 col-sm-12 col-xs-12 "> 
+						<header>
+							<h1>
+							<a href="file:///E:/Навчання/WEB/Weather/index.html"><span  class="glyphicon glyphicon-cloud ic"></span></a>
+							Просто погода!
+							</h1>
+					<form class="form-horizontal" role="form">
+								<div class="input-group">
+											<label class="control-label col-sm-2 col-md-2" for="text">Місто</label>
+										<div class="col col-md-5 col-lg-4 col-sm-10 col-xs-11 "> 
+										 <div class="input-group">
+											<input type="text" class="form-control" id="searchTextField" placeholder="Введіть місто">		
+														<span class="input-group-btn">
+																<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search "> </span></button>
+														</span>
+											</div>			
+										</div>
+							    </div>
+					</form>
+					</header>
+					<nav>
+									<ul class="nav nav-tabs">
+													<li class="active"><a data-toggle="tab" href="#home">Погода сьогодні</a></li>
+													<li><a data-toggle="tab" href="#menu1">Погода на три дні</a></li>
+													<li><a data-toggle="tab" href="#menu2">Погода на сім днів</a></li>
+													
+									</ul>
+					</nav>				
+					<article>
+								 <div class="tab-content">
+									<div id="home" class="tab-pane fade in active">
+											<table class="simple-little-table" cellspacing='0'>
+												<tr class="fb" >
+													<td >   </td>
+													<td>Вдень </td>
+													<td>Вночі </td>
+												</tr>
+												<tr>
+													<td>   		</td>
+													<td > <img src="png/30.png" alt=""> 	</td>
+													<td> <img src="png/4.png" alt="">	</td>					
+												</tr>					
+												<tr>
+													<td class="fb"> Температура </td>
+													<td>10 </td>
+													<td>10 </td>
+												</tr>
+												<tr>
+													<td class="fb"> Вологість </td>
+													<td>100% </td>
+													<td>100% </td>
+												</tr>
+												<tr>
+													<td class="fb"> Вітер </td>
+													<td>13 м/с </td>
+													<td>13 м/с </td>
+												</tr>
+												<tr>
+													<td class="fb"> Опади </td>
+													<td>1.8 мм </td>
+													<td>1.8 мм </td>
+												</tr>
+										</table>
+									</div>
+									<div id="menu1" class="tab-pane fade">
+										<table class="simple-little-table" cellspacing='0'>
+															
+														<tr class="fb">
+															<td >   </td>
+															<td colspan="2">Сьогодні</td>
+															<td colspan="2">Завтра </td>
+															<td colspan="2">Післязавтра  </td>
+														</tr>
+														
+														<tr class="fb">
+															<td>     </td>
+															<td>День </td>
+															<td>Ніч  </td>
+															<td>День </td>
+															<td>Ніч  </td>
+															<td>День </td>
+															<td>Ніч  </td>
+														</tr>
+														
+														
+														<tr>
+															<td>   		</td>
+															<td > <img src="png/17.png" alt=""> 	</td>
+															<td> <img src="png/19.png" alt="">	</td>
+															<td > <img src="png/21.png" alt=""> 	</td>
+															<td> <img src="png/28.png" alt="">	</td>
+															<td > <img src="png/33.png" alt=""> 	</td>
+															<td> <img src="png/45.png" alt="">	</td>		
+														</tr>
+														<tr>
+															<td class="fb"> Температура </td>
+															<td>16 </td>
+															<td>17 </td>
+															<td>21</td>
+															<td>19 </td>
+															<td>28 </td>
+															<td>19 </td>
+														</tr>
+
+														<tr>
+															<td class="fb"> Вологість % </td>
+															<td>100 </td>
+															<td>99 </td>
+															<td>87 </td>
+															<td>49 </td>
+															<td>56 </td>
+															<td>75 </td>
+														</tr>
+
+														<tr>
+															<td class="fb"> Вітер м/с </td>
+															<td>1.0 </td>
+															<td>1.8 </td>
+															<td>2.0 </td>
+															<td>4.9 </td>
+															<td>6.0 </td>
+															<td>8.9 </td>
+														</tr>
+
+														<tr>
+															<td class="fb"> Опади </td>
+															<td>0.0</td>
+															<td>0.0 </td>
+															<td>1.1 </td>
+															<td>1.0 </td>
+															<td>9 </td>
+															<td>4 </td>
+														</tr>
+												</table>
+									</div>
+									<div id="menu2" class="tab-pane fade">
+										<table class="simple-little-table" cellspacing='0'>
+												
+											<tr class="fb">
+												<td>   						</td>
+												<td colspan="2"> Сьогодні	</td>
+												<td colspan="2"> Завтра		</td>
+												<td colspan="2"> Післязавтра</td>
+												<td colspan="2"> 04.07 		</td>
+												<td colspan="2"> 05.07 		</td>
+												<td colspan="2"> 06.07  	</td>
+												<td colspan="2"> 07.07 		</td>
+											</tr>
+											
+											<tr class="fb">
+												<td>     </td>
+												<td>День </td>
+												<td>Ніч  </td>
+												<td>День </td>
+												<td>Ніч  </td>
+												<td>День </td>
+												<td>Ніч  </td>
+												<td>День </td>
+												<td>Ніч  </td>
+												<td>День </td>
+												<td>Ніч  </td>
+												<td>День </td>
+												<td>Ніч  </td>
+												<td>День </td>
+												<td>Ніч  </td>
+											</tr>
+											
+											
+											<tr>
+												<td>   		</td>
+												<td > <img src="png/26.png" alt=""> 	</td>
+												<td> <img src="png/27.png" alt="">	</td>
+												<td > <img src="png/27.png" alt=""> 	</td>
+												<td> <img src="png/33.png" alt="">	</td>
+												<td > <img src="png/33.png" alt=""> 	</td>
+												<td> <img src="png/32.png" alt="">	</td>	
+												<td > <img src="png/23.png" alt=""> 	</td>
+												<td> <img src="png/21.png" alt="">	</td>
+												<td > <img src="png/33.png" alt=""> 	</td>
+												<td> <img src="png/40.png" alt="">	</td>
+												<td > <img src="png/35.png" alt=""> 	</td>
+												<td> <img src="png/19.png" alt="">	</td>
+												<td > <img src="png/28.png" alt=""> 	</td>
+												<td> <img src="png/7.png" alt="">	</td>					
+											</tr>
+											
+											<tr>
+												<td class="fb"> Температура </td>
+												<td>16 </td>
+												<td>17 </td>
+												<td>21</td>
+												<td>19 </td>
+												<td>28 </td>
+												<td>19 </td>
+												<td>16 </td>
+												<td>17 </td>
+												<td>21</td>
+												<td>19 </td>
+												<td>28 </td>
+												<td>19 </td>
+												<td>28 </td>
+												<td>19 </td>
+											</tr>
+
+											<tr>
+												<td class="fb"> Вологість % </td>
+												<td>100 </td>
+												<td>99 </td>
+												<td>87 </td>
+												<td>49 </td>
+												<td>56 </td>
+												<td>75 </td>
+												<td>100 </td>
+												<td>99 </td>
+												<td>87 </td>
+												<td>49 </td>
+												<td>56 </td>
+												<td>75 </td>
+												<td>56 </td>
+												<td>75 </td>
+											</tr>
+
+											<tr>
+												<td class="fb"> Вітер м/с </td>
+												<td>1.0 </td>
+												<td>1.8 </td>
+												<td>2.0 </td>
+												<td>4.9 </td>
+												<td>6.0 </td>
+												<td>8.9 </td>
+												<td>1.0 </td>
+												<td>1.8 </td>
+												<td>2.0 </td>
+												<td>4.9 </td>
+												<td>6.0 </td>
+												<td>8.9 </td>
+												<td>1.0 </td>
+												<td>1.8 </td>
+											</tr>
+
+											<tr>
+												<td class="fb"> Опади </td>
+												<td>0.0</td>
+												<td>0.0 </td>
+												<td>1.1 </td>
+												<td>1.0 </td>
+												<td>9 </td>
+												<td>4 </td>
+												<td>0.0 </td>
+												<td>1.1 </td>
+												<td>1.0 </td>
+												<td>9 </td>
+												<td>4 </td>
+												<td>4 </td>
+												<td>0.0 </td>
+												<td>0.0 </td>
+											</tr>
+										</table>
+									</div>
+									
+								 </div>
+					</article>			  
+					<footer>
+							
+							<p>Дякую, що ви скористались нашим сайтом</p>
+							<a href="contact.html"  class="btn btn-default btn-md">
+							<span class="glyphicon glyphicon-envelope ">        </span>  Зв'язок з нами  </a> 
+										
+					</footer>
+				</div>	
+		</div>
+	</div>
+  </body>
+</html>
